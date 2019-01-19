@@ -1,2 +1,0 @@
-# shopProject
-OOP Final project

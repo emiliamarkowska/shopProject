@@ -1,0 +1,7 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /mnt/c/Users/Emila/Desktop/ShopProject/shopProject
+-- Boost version: 1.65.1
+-- Found the following Boost libraries:
+--   unit_test_framework
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/c/Users/Emila/Desktop/ShopProject/shopProject/cmake-build-debug

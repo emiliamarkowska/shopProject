@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/Project.dir/src/main.cpp.o CMakeFiles/Project.dir/src/Product.cpp.o  -o Project 
