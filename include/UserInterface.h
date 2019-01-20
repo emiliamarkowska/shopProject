@@ -14,14 +14,16 @@ class UserInterface {
 private:
     shared_ptr<Shop> shop;
 public:
-    UserInterface(shared_ptr<Shop> shop);
+    UserInterface();
     void displayClientsInformation();
     void displayProductsInformation();
     void changeShopState();
-    void changeSalary(int amountToChange);
+    void changeSalary();
     void buyProducts();
     void withdrawMoney();
     void checkMoneyState();
+    void displayMenu();
+    void start();
 
 };
 

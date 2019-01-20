@@ -6,20 +6,25 @@
 
 #include "ShopAssistant.h"
 #include <Shop.h>
+#include<iostream>
 
-ShopAssistant::ShopAssistant(string name, int id, double salary) {
+ShopAssistant::ShopAssistant(string name, int id, double salary, Shop* shop) {
     this -> name = name;
     this -> id = id;
     this -> salary = salary;
+    this -> shop = shop;
+
 }
 
 double ShopAssistant::sell(vector<shared_ptr<Product>> products) {
 
     double sum = 0;
+
     for (int i = 0; i < products.size(); i++)
     {
         sum += products.at(i) -> getPrice();
     }
+
     shop -> addMoney(sum);
 
     return sum;

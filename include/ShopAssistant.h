@@ -17,9 +17,9 @@ private:
     string name;
     int id;
     double salary;
-    shared_ptr<Shop> shop;
+    Shop* shop;
 public:
-    ShopAssistant(string name, int id, double salary);
+    ShopAssistant(string name, int id, double salary, Shop* shop);
     double sell (vector<shared_ptr<Product>> products);
     double getSalary();
     string getName();

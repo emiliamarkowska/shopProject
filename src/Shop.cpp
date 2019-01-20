@@ -8,11 +8,12 @@
 #include "iostream"
 #include <time.h>
 
+
 const int SERVING_TIME = 10;
 
 Shop::Shop(string shopName) {
     this -> shopName = shopName;
-    this -> shopAssistant = std::make_shared<ShopAssistant> ("John", 1, 2200);
+    this -> shopAssistant = std::make_shared<ShopAssistant> ("John", 1, 2200, this);
     this -> isOpen = false;
     this -> budget = 10000;
 
@@ -27,34 +28,33 @@ Shop::Shop(string shopName) {
         products.push_back(std::make_shared<Electronics> (800, "Smartphone", 2));
         products.push_back(std::make_shared<Electronics> (4000, "TV", 3));
     }
-
 }
 
 void Shop::getInformationAboutProducts() {
-    int carrotCount = 0;
-    int breadCount = 0;
-    int chickenCount = 0;
-    int tshirtCount = 0;
-    int shoesCount = 0;
-    int jeansCount = 0;
-    int smartphoneCount = 0;
-    int tvCount = 0;
+    int count = 0;
+
+
     if(products.size() == 0)
     {
         cout << "No products in shop" << endl;
         return;
     }
+    string currentName = products.at(0) -> getName();
+
     cout << "Products total: " << products.size() << endl;
     for(int i = 0; i < products.size() ; i++)
     {
-        if(products.at(i) -> getName() == "Carrot")  carrotCount++;
-        if(products.at(i) -> getName() == "Bread")  carrotCount++;
-        if(products.at(i) -> getName() == "")  carrotCount++;
-        if(products.at(i) -> getName() == "Carrot")  carrotCount++;
-        if(products.at(i) -> getName() == "Carrot")  carrotCount++;
-        if(products.at(i) -> getName() == "Carrot")  carrotCount++;
-        if(products.at(i) -> getName() == "Carrot")  carrotCount++;
-        if(products.at(i) -> getName() == "Carrot")  carrotCount++;
+        if (currentName == products.at(i) -> getName())
+        {
+            count++;
+        }
+        else
+        {
+            cout << "amount: " << count << endl;
+            cout << products.at(i - 1) -> showDescription() << endl;
+            count = 1;
+            currentName = products.at(i) -> getName();
+        }
     }
 
 }
@@ -69,10 +69,13 @@ void Shop::changeShopState() {
     if(this -> isOpen) {
         this->isOpen = false;
         clientsTh.join();
+        staffTh.join();
     }
     else {
         this->isOpen = true;
+        staffTh = std::thread(&Shop::serveCustomers, this);
         clientsTh = std::thread(&Shop::simulateClients, this);
+
     }
 }
 
@@ -81,8 +84,7 @@ double Shop::getBudget() {
 }
 
 void Shop::addMoney(double money) {
-    this ->budget += money;
-
+       budget += money;
 }
 
 double Shop::withdrawMoney(double money) {
@@ -115,21 +117,26 @@ shared_ptr<Client> Shop::getClient(unsigned numberInQueue) {
 }
 
 void Shop::serveCustomers() {
+
+
+
     while(isOpen) {
         this_thread::sleep_for(chrono::seconds( SERVING_TIME ));
-        shared_ptr<Client> currentClient = queue.at(0);
-        currentClient ->buyProducts(*shopAssistant);
-        queue.erase(queue.begin());
+        if (queue.size() > 0) {
 
+            shared_ptr<Client> currentClient = queue.at(0);
+            currentClient->buyProducts(*shopAssistant);
+            queue.erase(queue.begin());
+        }
     }
 }
 
 void Shop::simulateClients() {
     srand(time(NULL));
-    while(isOpen) {
+    while(isOpen)
+    {
         this_thread::sleep_for(chrono::seconds(rand() % 10 + 5));
-
-        shared_ptr<Client> cl(new Client(rand() % 4000 + 100));
+       shared_ptr<Client> cl(new Client(rand() % 4000 + 100));
 
         int prAmount = rand() % 10 + 2;
         for (int i = 1; i < prAmount; i++)
@@ -140,6 +147,8 @@ void Shop::simulateClients() {
 
         }
         queue.push_back(cl);
+
+
     }
 }
 
@@ -153,6 +162,22 @@ shared_ptr<Client> Shop::getClientFromQueue(int numberInQueue) {
 
 shared_ptr<ShopAssistant> Shop::getShopAssistant() {
     return this -> shopAssistant;
+}
+
+void Shop::addProduct(shared_ptr<Product> product) {
+    for (int i = 0; i < products.size(); i++)
+    {
+        if (product -> getName() == products.at(i) -> getName())
+        {
+            products.insert(products.begin() + i, product );
+            return;
+        }
+    }
+    products.push_back(product);
+}
+
+string Shop::getShopName() {
+    return this -> shopName;
 }
 
 

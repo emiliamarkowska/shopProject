@@ -15,6 +15,7 @@
 #include <vector>
 #include <thread>
 #include <chrono>
+#include<mutex>
 
 
 
@@ -30,6 +31,7 @@ private:
     std::thread staffTh;
 
 public:
+    mutex mx;
     Shop(string shopName);
     bool checkIfOpen();
     void changeShopState();
@@ -37,6 +39,7 @@ public:
     void addMoney(double money);
     double withdrawMoney(double money);
     shared_ptr<Product> getProduct(string name);
+    void addProduct(shared_ptr<Product> product);
     shared_ptr<Client> getClient(unsigned numberInQueue);
     void serveCustomers();
     void simulateClients();
@@ -44,6 +47,7 @@ public:
     shared_ptr<Client> getClientFromQueue(int numberInQueue);
     void getInformationAboutProducts();
     shared_ptr<ShopAssistant> getShopAssistant();
+    string getShopName();
 
 };
 

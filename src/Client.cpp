@@ -16,7 +16,9 @@ void Client::addToCart(shared_ptr<Product> product) {
 }
 
 void Client::buyProducts(ShopAssistant sa) {
+
     pay(sa.sell(shoppingCart));
+
 }
 
 double Client::getMoney() {
