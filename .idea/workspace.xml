@@ -14,18 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e679f108-9097-4ac7-91f3-efcb2d8bae55" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/include/Client.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Client.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Clothes.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Clothes.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Electronics.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Electronics.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Food.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Food.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Product.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Product.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/ShopAssistant.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/ShopAssistant.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Clothes.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Clothes.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Electronics.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Electronics.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Food.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Food.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Product.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Product.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShopAssistant.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShopAssistant.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Shop.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Shop.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/../debug/" />
@@ -47,81 +36,36 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cpp" value="14" />
-          <entry key="h" value="16" />
+          <entry key="h" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ObjectiveC" value="30" />
+          <entry key="ObjectiveC" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="1322" />
-          <entry key="h" value="1706" />
+          <entry key="cpp" value="1436" />
+          <entry key="h" value="2133" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="3028" />
+          <entry key="ObjectiveC" value="3569" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/Client.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="21" column="5" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="53" />
-              <folding>
-                <element signature="e#92#108#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Client.cpp">
+        <entry file="file://$PROJECT_DIR$/include/Shop.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
+            <state relative-caret-position="392">
+              <caret line="27" column="39" lean-forward="true" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
               <folding>
-                <element signature="e#41#60#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/ShopAssistant.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-              <folding>
-                <element signature="e#106#126#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ShopAssistant.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/Product.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-189">
-              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-              <folding>
-                <element signature="e#95#112#0" expanded="true" />
+                <element signature="e#88#108#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,9 +88,10 @@
         <option value="$PROJECT_DIR$/src/Food.cpp" />
         <option value="$PROJECT_DIR$/src/Product.cpp" />
         <option value="$PROJECT_DIR$/include/ShopAssistant.h" />
-        <option value="$PROJECT_DIR$/src/ShopAssistant.cpp" />
         <option value="$PROJECT_DIR$/include/Client.h" />
         <option value="$PROJECT_DIR$/src/Client.cpp" />
+        <option value="$PROJECT_DIR$/src/ShopAssistant.cpp" />
+        <option value="$PROJECT_DIR$/include/Shop.h" />
       </list>
     </option>
   </component>
@@ -255,12 +200,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1547978651937</updated>
-      <workItem from="1547978653894" duration="5647000" />
+      <workItem from="1547978653894" duration="6457000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5647000" />
+    <option name="totallyTimeSpent" value="6457000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -297,13 +242,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Shop.cpp">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/Shop.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UserInterface.cpp">
       <provider selected="true" editor-type-id="text-editor" />
@@ -370,10 +308,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ShopAssistant.cpp">
+    <entry file="file://$PROJECT_DIR$/include/Client.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+        <state relative-caret-position="243">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="53" />
+          <folding>
+            <element signature="e#92#108#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -387,22 +328,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/Client.h">
+    <entry file="file://$PROJECT_DIR$/src/ShopAssistant.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="53" />
-          <folding>
-            <element signature="e#92#108#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="108">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Client.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="51" column="25" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
+        <state relative-caret-position="446">
+          <caret line="29" column="33" lean-forward="true" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
           <folding>
             <element signature="e#41#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Shop.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="27" column="39" lean-forward="true" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+          <folding>
+            <element signature="e#88#108#0" expanded="true" />
           </folding>
         </state>
       </provider>
