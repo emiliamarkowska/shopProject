@@ -13,6 +13,7 @@
 class Client {
 private:
     double money;
+    unsigned numberInQueue;
     vector<shared_ptr<Product>> shoppingCart;
     double currentCost();
 
@@ -24,6 +25,7 @@ public:
     double getMoney();
     void addMoney(double amount);
     void pay(double amount);
+    unsigned getNumberInQueue();
 
 
 };

@@ -7,6 +7,7 @@
 
 #include <Product.h>
 #include <ShopAssistant.h>
+#include "Client.h"
 #include <memory>
 #include <vector>
 
@@ -17,6 +18,7 @@ private:
     double budget;
     vector<shared_ptr<Product>> products;
     vector<shared_ptr<ShopAssistant>> employees;
+    vector<shared_ptr<Client>> clients;
 
 public:
     Shop(string shopName);
@@ -26,9 +28,8 @@ public:
     double getBudget();
     void addMoney(double money);
     double withdrawMoney(double money);
-    Product getProduct
-
-
+    shared_ptr<Product> getProduct(string name);
+    shared_ptr<Client> getClient(unsigned numberInQueue);
 
 };
 

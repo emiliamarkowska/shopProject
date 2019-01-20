@@ -57,3 +57,7 @@ void Client::removeFromCart(shared_ptr<Product> product) {
         }
     }
 }
+
+unsigned Client::getNumberInQueue() {
+    return this -> numberInQueue;
+}
