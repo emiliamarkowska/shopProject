@@ -15,7 +15,7 @@ set(CMAKE_VERBOSE_MAKEFILE TRUE)
 #Source files here
 set(SOURCE_FILES src/main.cpp
         src/Product.cpp
-        include/Product.h)
+        include/Product.h src/Shop.cpp include/Shop.h src/UserInterface.cpp include/UserInterface.h src/Client.cpp include/Client.h src/ShopAssistant.cpp include/ShopAssistant.h src/Food.cpp include/Food.h src/Clothes.cpp include/Clothes.h src/Electronics.cpp include/Electronics.h)
 
 add_executable(Project ${SOURCE_FILES})
 
