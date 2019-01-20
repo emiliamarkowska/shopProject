@@ -5,6 +5,7 @@ set(CMAKE_CXX_COMPILER g++)#requires g++ to be available on PATH
 set(CMAKE_C_COMPILER gcc)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
 project(Project)
 enable_language(CXX)
@@ -13,9 +14,24 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_VERBOSE_MAKEFILE TRUE) 
 
 #Source files here
-set(SOURCE_FILES src/main.cpp
+set(SOURCE_FILES
+        src/main.cpp
         src/Product.cpp
-        include/Product.h src/Shop.cpp include/Shop.h src/UserInterface.cpp include/UserInterface.h src/Client.cpp include/Client.h src/ShopAssistant.cpp include/ShopAssistant.h src/Food.cpp include/Food.h src/Clothes.cpp include/Clothes.h src/Electronics.cpp include/Electronics.h)
+        include/Product.h
+        src/Shop.cpp
+        include/Shop.h
+        src/UserInterface.cpp
+        include/UserInterface.h
+        src/Client.cpp
+        include/Client.h
+        src/ShopAssistant.cpp
+        include/ShopAssistant.h
+        src/Food.cpp
+        include/Food.h
+        src/Clothes.cpp
+        include/Clothes.h
+        src/Electronics.cpp
+        include/Electronics.h)
 
 add_executable(Project ${SOURCE_FILES})
 

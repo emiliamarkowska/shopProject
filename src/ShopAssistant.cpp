@@ -5,6 +5,7 @@
 #include <ShopAssistant.h>
 
 #include "ShopAssistant.h"
+#include <Shop.h>
 
 ShopAssistant::ShopAssistant(string name, int id, double salary) {
     this -> name = name;

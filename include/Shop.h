@@ -10,6 +10,10 @@
 #include "Client.h"
 #include <memory>
 #include <vector>
+#include <thread>
+#include <chrono>
+
+
 
 class Shop {
 private:
@@ -17,12 +21,13 @@ private:
     bool isOpen;
     double budget;
     vector<shared_ptr<Product>> products;
-    vector<shared_ptr<ShopAssistant>> employees;
-    vector<shared_ptr<Client>> clients;
+    shared_ptr<ShopAssistant> shopAssistant;
+    vector<shared_ptr<Client>> queue;
+    std::thread clientsTh;
+    std::thread staffTh;
 
 public:
     Shop(string shopName);
-    ShopAssistant& getEmployee(int id);
     bool checkIfOpen();
     void changeShopState();
     double getBudget();
@@ -30,6 +35,8 @@ public:
     double withdrawMoney(double money);
     shared_ptr<Product> getProduct(string name);
     shared_ptr<Client> getClient(unsigned numberInQueue);
+    void serveCustomers();
+    void simulateClients();
 
 };
 

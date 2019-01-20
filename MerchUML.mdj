@@ -4071,7 +4071,7 @@
 										"$ref": "AAAAAAFoTMmbt2Mek2g="
 									},
 									"edgePosition": 1,
-									"text": "-clients"
+									"text": "-queue"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -6155,7 +6155,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFnuPHeI1Uqe9o="
 							},
-							"name": "clients",
+							"name": "queue",
 							"end1": {
 								"_type": "UMLAssociationEnd",
 								"_id": "AAAAAAFoTMmbt2MbKEY=",

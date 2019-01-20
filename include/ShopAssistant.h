@@ -8,7 +8,9 @@
 #include <Product.h>
 #include <vector>
 #include <memory>
-#include <Shop.h>
+//#include <Shop.h>
+
+class Shop;
 
 class ShopAssistant {
 private:
