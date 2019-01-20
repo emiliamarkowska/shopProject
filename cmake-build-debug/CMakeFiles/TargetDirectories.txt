@@ -1,6 +1,0 @@
-/mnt/c/Users/Emila/Desktop/ShopProject/shopProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/Emila/Desktop/ShopProject/shopProject/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/c/Users/Emila/Desktop/ShopProject/shopProject/cmake-build-debug/CMakeFiles/test.dir
-/mnt/c/Users/Emila/Desktop/ShopProject/shopProject/cmake-build-debug/CMakeFiles/check.dir
-/mnt/c/Users/Emila/Desktop/ShopProject/shopProject/cmake-build-debug/CMakeFiles/Project.dir
-/mnt/c/Users/Emila/Desktop/ShopProject/shopProject/cmake-build-debug/CMakeFiles/TestProject.dir
