@@ -13,6 +13,50 @@ const int SERVING_TIME = 10;
 Shop::Shop(string shopName) {
     this -> shopName = shopName;
     this -> shopAssistant = std::make_shared<ShopAssistant> ("John", 1, 2200);
+    this -> isOpen = false;
+    this -> budget = 10000;
+
+    for (int i = 0; i < 20; i++)
+    {
+        products.push_back(std::make_shared<Food> (2, "Carrot", 20));
+        products.push_back(std::make_shared<Food> (1.5, "Bread", 3));
+        products.push_back(std::make_shared<Food> (10, "Chicken", 10));
+        products.push_back(std::make_shared<Clothes> (40, "T-Shirt", 36));
+        products.push_back(std::make_shared<Clothes> (100, "Shoes", 40));
+        products.push_back(std::make_shared<Clothes> (80, "Jeans", 38));
+        products.push_back(std::make_shared<Electronics> (800, "Smartphone", 2));
+        products.push_back(std::make_shared<Electronics> (4000, "TV", 3));
+    }
+
+}
+
+void Shop::getInformationAboutProducts() {
+    int carrotCount = 0;
+    int breadCount = 0;
+    int chickenCount = 0;
+    int tshirtCount = 0;
+    int shoesCount = 0;
+    int jeansCount = 0;
+    int smartphoneCount = 0;
+    int tvCount = 0;
+    if(products.size() == 0)
+    {
+        cout << "No products in shop" << endl;
+        return;
+    }
+    cout << "Products total: " << products.size() << endl;
+    for(int i = 0; i < products.size() ; i++)
+    {
+        if(products.at(i) -> getName() == "Carrot")  carrotCount++;
+        if(products.at(i) -> getName() == "Bread")  carrotCount++;
+        if(products.at(i) -> getName() == "")  carrotCount++;
+        if(products.at(i) -> getName() == "Carrot")  carrotCount++;
+        if(products.at(i) -> getName() == "Carrot")  carrotCount++;
+        if(products.at(i) -> getName() == "Carrot")  carrotCount++;
+        if(products.at(i) -> getName() == "Carrot")  carrotCount++;
+        if(products.at(i) -> getName() == "Carrot")  carrotCount++;
+    }
+
 }
 
 
@@ -98,3 +142,17 @@ void Shop::simulateClients() {
         queue.push_back(cl);
     }
 }
+
+int Shop::getQueueSize() {
+    return queue.size();
+}
+
+shared_ptr<Client> Shop::getClientFromQueue(int numberInQueue) {
+    return queue.at(numberInQueue);
+}
+
+shared_ptr<ShopAssistant> Shop::getShopAssistant() {
+    return this -> shopAssistant;
+}
+
+

@@ -40,3 +40,7 @@ int ShopAssistant::getID() {
 void ShopAssistant::setID(int id) {
     this -> id = id;
 }
+
+void ShopAssistant::setSalary(double amountToChange) {
+    this -> salary += amountToChange;
+}

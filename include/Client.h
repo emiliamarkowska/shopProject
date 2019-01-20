@@ -26,6 +26,7 @@ public:
     void addMoney(double amount);
     void pay(double amount);
     unsigned getNumberInQueue();
+    string getInformation();
 
 
 };

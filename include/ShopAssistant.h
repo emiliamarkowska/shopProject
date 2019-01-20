@@ -25,6 +25,7 @@ public:
     string getName();
     int getID();
     void setID(int id);
+    void setSalary(double amountToChange);
 
 };
 

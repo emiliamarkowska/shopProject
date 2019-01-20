@@ -61,3 +61,15 @@ void Client::removeFromCart(shared_ptr<Product> product) {
 unsigned Client::getNumberInQueue() {
     return this -> numberInQueue;
 }
+
+string Client::getInformation() {
+    ostringstream information;
+    information << "Cart content: " << endl;
+    for (int i = 0; i < shoppingCart.size(); i++)
+    {
+        information << i+1 << ". " << shoppingCart.at(i) -> showDescription() << endl;
+    }
+
+    information << "Total cost: " << currentCost() << endl;
+    return information.str();
+}

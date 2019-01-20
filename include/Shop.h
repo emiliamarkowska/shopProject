@@ -8,6 +8,9 @@
 #include <Product.h>
 #include <ShopAssistant.h>
 #include "Client.h"
+#include "Food.h"
+#include "Clothes.h"
+#include "Electronics.h"
 #include <memory>
 #include <vector>
 #include <thread>
@@ -37,6 +40,10 @@ public:
     shared_ptr<Client> getClient(unsigned numberInQueue);
     void serveCustomers();
     void simulateClients();
+    int getQueueSize();
+    shared_ptr<Client> getClientFromQueue(int numberInQueue);
+    void getInformationAboutProducts();
+    shared_ptr<ShopAssistant> getShopAssistant();
 
 };
 
