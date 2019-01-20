@@ -5,7 +5,7 @@ zamknac sklep
 wplacac pieniadze
 dokupywac produkty
 
-klienci generowani osobno, w losowych odstepach czasu, im szybciej pracownik obsluguje klientów, tym wiecej musimy mu placic
+klienci generowani osobno, w losowych odstepach czasu, im szybciej pracownik obsluguje klientow, tym wiecej musimy mu placic
 
-ustaw marżę od klienta
+ustaw marzę od klienta
 zobacz liste klientow + zakupy
