@@ -13,7 +13,7 @@ const int SERVING_TIME = 10;
 
 Shop::Shop(string shopName) {
     this -> shopName = shopName;
-    this -> shopAssistant = std::make_shared<ShopAssistant> ("John", 1, 2200, this);
+    this -> shopAssistant = std::make_shared<ShopAssistant> ("John", 1, 300, this);
     this -> isOpen = false;
     this -> budget = 10000;
 
@@ -150,6 +150,7 @@ void Shop::serveCustomers() {
             shared_ptr<Client> currentClient = queue.at(0);
             currentClient->buyProducts(*shopAssistant);
             queue.erase(queue.begin());
+            withdrawMoney(shopAssistant -> getSalary());
         }
     }
 }

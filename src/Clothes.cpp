@@ -12,9 +12,9 @@ Clothes::Clothes(double price, string name, int size) : Product(price, name)  {
 string Clothes::showDescription() {
     ostringstream str;
     str << "Product type: clothing" << endl;
-    str << "Name: " << getName() << endl;
-    str << "Price: " << getPrice() << endl;
-    str << "size: " << getSize() << endl << endl;
+    str << "Name: " << getName();
+    str << " | Price: $" << getPrice();
+    str << " | Size: " << getSize() << endl;
     return str.str();
 }
 

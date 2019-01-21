@@ -13,9 +13,9 @@ Food::Food(double price, string name, int daysDueExpiration) : Product(price, na
 string Food::showDescription() {
     ostringstream str;
     str << "Product type: food" << endl;
-    str << "Name: " << getName() << endl;
-    str << "Price: " << getPrice() << endl;
-    str << "days due expiration: " << getDaysDueExpiration() << " days" << endl << endl;
+    str << "Name: " << getName();
+    str << " | Price: $" << getPrice();
+    str << " | Days due expiration: " << getDaysDueExpiration() << " days" << endl;
     return str.str();
 }
 

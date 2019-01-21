@@ -13,9 +13,9 @@ Electronics::Electronics(double price, string name, int warranty) : Product(pric
 string Electronics::showDescription() {
     ostringstream str;
     str << "Product type: electronics" << endl;
-    str << "Name: " << getName() << endl;
-    str << "Price: " << getPrice() << endl;
-    str << "warranty period: " << getWarrantyPeriod() << " years" << endl << endl;
+    str << "Name: " << getName();
+    str << " | Price: $" << getPrice();
+    str << " | Warranty period: " << getWarrantyPeriod() << " years" << endl;
     return str.str();
 }
 
