@@ -29,32 +29,50 @@ Shop::Shop(string shopName) {
         products.push_back(std::make_shared<Electronics> (4000, "TV", 3));
     }
 }
+struct NameWithAmount{
+    string name;
+    int amount;
+
+    NameWithAmount(string name)
+    {
+        this -> name = name;
+        this -> amount = 1;
+    }
+
+};
+
 
 void Shop::getInformationAboutProducts() {
     int count = 0;
-
+    vector<shared_ptr<NameWithAmount>> namesWithAmounts;
 
     if(products.size() == 0)
     {
         cout << "No products in shop" << endl;
         return;
     }
-    string currentName = products.at(0) -> getName();
 
+    namesWithAmounts.push_back(make_shared<NameWithAmount>(products.at(0) -> getName()));
     cout << "Products total: " << products.size() << endl;
-    for(int i = 0; i < products.size() ; i++)
+    for(int i = 1; i < products.size() ; i++)
     {
-        if (currentName == products.at(i) -> getName())
+        bool isAlready = false;
+        for(int j = 0; j < namesWithAmounts.size(); j++)
         {
-            count++;
+            if(namesWithAmounts.at(j) -> name == products.at(i) -> getName())
+            {
+                namesWithAmounts.at(j) -> amount++;
+                isAlready = true;
+            }
         }
-        else
-        {
-            cout << "amount: " << count << endl;
-            cout << products.at(i - 1) -> showDescription() << endl;
-            count = 1;
-            currentName = products.at(i) -> getName();
-        }
+        if(!isAlready)
+            namesWithAmounts.push_back(make_shared<NameWithAmount>(products.at(i) -> getName()));
+    }
+
+    for(int i = 0; i < namesWithAmounts.size(); i++)
+    {
+        cout << "Name: " << namesWithAmounts.at(i) -> name << endl;
+        cout << "Amount: " << namesWithAmounts.at(i) -> amount << endl << endl;
     }
 
 }
@@ -88,12 +106,19 @@ void Shop::addMoney(double money) {
 }
 
 double Shop::withdrawMoney(double money) {
-    if(budget - money >= 0)
-    {
-        budget -= money;
-        return money;
+    try{
+        if(budget - money >= 0)
+        {
+            budget -= money;
+            return money;
+        }
+        throw "You want to withdraw too much money";
     }
-     throw "You want to withdraw too much money, you don't have tyle money, wracamy do Sydney, Polska zla, never come back";
+   catch(char const* e)
+   {
+       cout << e  << endl;
+   }
+
 }
 
 shared_ptr<Product> Shop::getProduct(string name) {
@@ -103,7 +128,7 @@ shared_ptr<Product> Shop::getProduct(string name) {
             return products.at(i);
     }
 
-    throw "W cala Polska nie ma taki produkt, wracamy do Sidney";
+    throw "There is no product with such name";
 }
 
 
@@ -113,12 +138,10 @@ shared_ptr<Client> Shop::getClient(unsigned numberInQueue) {
         if(queue.at(i) -> getNumberInQueue() == numberInQueue)
             return queue.at(i);
     }
-    throw "Polska numeracja dziwna, Arek, wracamy do Sidney, can't stand it any longer";
+    throw "There is no client with such number in a queue";
 }
 
 void Shop::serveCustomers() {
-
-
 
     while(isOpen) {
         this_thread::sleep_for(chrono::seconds( SERVING_TIME ));
@@ -141,10 +164,11 @@ void Shop::simulateClients() {
         int prAmount = rand() % 10 + 2;
         for (int i = 1; i < prAmount; i++)
         {
+            int randomPosition = rand() % products.size() ;
             cl -> addToCart(
-                    products.at(rand() % products.size())
+                    products.at(randomPosition)
                     );
-
+            products.erase(products.begin() + randomPosition);
         }
         queue.push_back(cl);
 
@@ -179,5 +203,15 @@ void Shop::addProduct(shared_ptr<Product> product) {
 string Shop::getShopName() {
     return this -> shopName;
 }
+
+int Shop::getAmountOfProducts() {
+    return products.size();
+}
+
+void Shop::hireShopAssistant(shared_ptr<ShopAssistant> shopAssistant) {
+    this -> shopAssistant = shopAssistant;
+}
+
+
 
 

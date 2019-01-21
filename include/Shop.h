@@ -31,7 +31,6 @@ private:
     std::thread staffTh;
 
 public:
-    mutex mx;
     Shop(string shopName);
     bool checkIfOpen();
     void changeShopState();
@@ -48,6 +47,8 @@ public:
     void getInformationAboutProducts();
     shared_ptr<ShopAssistant> getShopAssistant();
     string getShopName();
+    int getAmountOfProducts();
+    void hireShopAssistant(shared_ptr<ShopAssistant> shopAssistant);
 
 };
 

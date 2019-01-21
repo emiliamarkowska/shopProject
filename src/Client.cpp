@@ -10,9 +10,12 @@ using namespace std;
 void Client::addToCart(shared_ptr<Product> product) {
 
     if (currentCost() + product -> getPrice() <= getMoney())
+    {
+
         shoppingCart.push_back(product);
-    else
-        cout << "Insufficient funds." << endl;
+
+    }
+
 }
 
 void Client::buyProducts(ShopAssistant sa) {
@@ -49,15 +52,12 @@ double Client::currentCost() {
 void Client::removeFromCart(shared_ptr<Product> product) {
     for (int i = 0; i < shoppingCart.size(); i++)
     {
-        if (product == shoppingCart.at(i))
-        {
+        if (product == shoppingCart.at(i)) {
             shoppingCart.erase(shoppingCart.begin() + i);
-        }
-        else
-        {
-            cout << "Product not in the cart." << endl;
+            return;
         }
     }
+    cout << "Product not in the cart" << endl;
 }
 
 unsigned Client::getNumberInQueue() {
@@ -74,4 +74,8 @@ string Client::getInformation() {
 
     information << "Total cost: " << currentCost() << endl;
     return information.str();
+}
+
+int Client::getCartSize() {
+    return shoppingCart.size();
 }

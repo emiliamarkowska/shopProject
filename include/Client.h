@@ -15,9 +15,10 @@ private:
     double money;
     unsigned numberInQueue;
     vector<shared_ptr<Product>> shoppingCart;
-    double currentCost();
+
 
 public:
+    double currentCost();
     Client(double money);
     void addToCart(shared_ptr<Product> product);
     void removeFromCart(shared_ptr<Product> product);
@@ -27,6 +28,7 @@ public:
     void pay(double amount);
     unsigned getNumberInQueue();
     string getInformation();
+    int getCartSize();
 
 
 };

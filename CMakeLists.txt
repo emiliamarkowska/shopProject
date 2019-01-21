@@ -47,7 +47,16 @@ include_directories(
 
 #Test source files here
 set(SOURCE_TEST_FILES
-        test/master.cpp)
+        test/master.cpp
+        test/testShop.cpp
+        src/Shop.cpp
+        src/Product.cpp
+        src/Client.cpp
+        src/Food.cpp
+        src/Electronics.cpp
+        src/Clothes.cpp
+        src/ShopAssistant.cpp
+        test/testClient.cpp test/testShopAssistant.cpp)
 
 add_executable(TestProject ${SOURCE_TEST_FILES})
 

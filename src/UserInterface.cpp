@@ -75,45 +75,58 @@ void UserInterface::buyProducts() {
 
     int choice;
     cin >> choice;
+    cout << "How many items do you want to buy?" << endl;
+    int amount;
+    cin >> amount;
     shared_ptr<Product> product;
     switch (choice)
     {
         case 1:
             product = std::make_shared<Food> (2, "Carrot", 20);
-            shop ->withdrawMoney(1);
+            shop ->withdrawMoney(1 * amount);
             break;
         case 2:
             product = std::make_shared<Food> (1.5, "Bread", 3);
-            shop ->withdrawMoney(0.75);
+            shop ->withdrawMoney(0.75 * amount);
             break;
         case 3:
             product = std::make_shared<Food> (10, "Chicken", 10);
-            shop ->withdrawMoney(5);
+            shop ->withdrawMoney(5* amount);
             break;
         case 4:
             product = std::make_shared<Clothes> (40, "T-Shirt", 36);
-            shop ->withdrawMoney(20);
+            shop ->withdrawMoney(20 * amount );
             break;
         case 5:
             product = std::make_shared<Clothes> (100, "Shoes", 40);
-            shop ->withdrawMoney(70);
+            shop ->withdrawMoney(70 * amount);
             break;
         case 6:
             product = std::make_shared<Clothes> (80, "Jeans", 38);
-            shop ->withdrawMoney(60);
+            shop ->withdrawMoney(60 * amount);
             break;
         case 7:
             product = std::make_shared<Electronics> (800, "Smartphone", 2);
-            shop ->withdrawMoney(700);
+            shop ->withdrawMoney(700 * amount);
             break;
         case 8:
             product = std::make_shared<Electronics> (4000, "TV", 3);
-            shop ->withdrawMoney(3600);
+            shop ->withdrawMoney(3600 * amount);
             break;
         default:
             return;
     }
-    shop -> addProduct(product);
+
+    if(amount * product ->getPrice() > shop -> getBudget())
+    {
+        cout << "You can't buy those things" << endl;
+        return;
+    }
+
+    for(int i = 0; i < amount; i++)
+    {
+        shop -> addProduct(product);
+    }
     cout << "Your product has been bought." << endl;
 }
 
