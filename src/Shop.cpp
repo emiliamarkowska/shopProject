@@ -9,7 +9,7 @@
 #include <time.h>
 
 
-const int SERVING_TIME = 10;
+const int SERVING_TIME = 3000;
 
 Shop::Shop(string shopName) {
     this -> shopName = shopName;
@@ -17,7 +17,7 @@ Shop::Shop(string shopName) {
     this -> isOpen = false;
     this -> budget = 10000;
 
-    for (int i = 0; i < 20; i++)
+    for (int i = 0; i < 500; i++)
     {
         products.push_back(std::make_shared<Food> (2, "Carrot", 20));
         products.push_back(std::make_shared<Food> (1.5, "Bread", 3));
@@ -144,7 +144,8 @@ shared_ptr<Client> Shop::getClient(unsigned numberInQueue) {
 void Shop::serveCustomers() {
 
     while(isOpen) {
-        this_thread::sleep_for(chrono::seconds( SERVING_TIME ));
+        int st = SERVING_TIME / shopAssistant -> getSalary();
+        this_thread::sleep_for(chrono::seconds( st ));
         if (queue.size() > 0) {
 
             shared_ptr<Client> currentClient = queue.at(0);

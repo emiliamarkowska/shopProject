@@ -8,6 +8,8 @@
 #include <Shop.h>
 #include<iostream>
 
+const int SERVING_TIME = 3000;
+
 ShopAssistant::ShopAssistant(string name, int id, double salary, Shop* shop) {
     this -> name = name;
     this -> id = id;
@@ -48,4 +50,5 @@ void ShopAssistant::setID(int id) {
 
 void ShopAssistant::setSalary(double amountToChange) {
     this -> salary = amountToChange;
+    cout << "New serving speed: " << SERVING_TIME / amountToChange << "s." << endl;
 }
